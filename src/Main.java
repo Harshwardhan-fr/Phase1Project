@@ -1,17 +1,32 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+import java.io.File;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main extends ListFiles {
+    public static String root_dir="C:\\Users\\hrwrd\\IdeaProjects\\Phase1Project\\dir";
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        File f1= new File(root_dir);
+        System.out.println("Welcome to File System by Harshwardhan");
+        Scanner sc= new Scanner(System.in);
+        while(true){
+            System.out.println("1-List all files in Directory");
+            System.out.println("2-File operations");
+            System.out.println("3-Close application");
+            int aux=0;
+            aux=sc.nextInt();
+            switch(aux){
+                case 3:
+                    System.out.println("GoodBye");
+                    System.exit(0);
+                case 2:
+                    System.out.println("File Operations Selected");
+                    break;
+                case 1:
+                    Listfiles();
+                    break;
+                default:
+                    System.out.println("Enter a valid option");
+            }
         }
-    }
+        }
 }
