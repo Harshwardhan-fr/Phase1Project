@@ -12,8 +12,12 @@ public class Main {
             System.out.println("1-List all files in Directory");
             System.out.println("2-File operations");
             System.out.println("3-Close application");
-            int aux=0;
-            aux=sc.nextInt();
+            Integer aux=0;
+            try{
+                aux=Integer.parseInt(sc.nextLine());
+            }catch(Exception e){
+                System.out.println("Enter a valid integer");
+            }
             switch(aux){
                 case 3:
                     System.out.println("GoodBye");
@@ -30,5 +34,5 @@ public class Main {
                     System.out.println("Enter a valid option");
             }
         }
-        }
+    }
 }

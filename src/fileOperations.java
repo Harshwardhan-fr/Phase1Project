@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 
-public class fileOperations {
+public class fileOperations  {
     public static File f1= new File("C:\\Users\\hrwrd\\IdeaProjects\\Phase1Project\\dir");
     void AddFile(String Fname) {
         File f= new File(Fname);
@@ -13,6 +13,7 @@ public class fileOperations {
             }
         }
         f.renameTo(new File(f1,f.getName()));
+        System.out.println("File Create sucessfully");
     }
     void DelFile(String Fname){
         File f=new File(f1,Fname);
@@ -32,27 +33,34 @@ public class fileOperations {
         }
     }
     public void fileOps() {
+        System.out.println("File Operations Menu");
         Scanner sc= new Scanner(System.in);
-        String aux="0";
-        while(aux!="4") {
+        Integer aux=0;
+        while(aux!=4){
             System.out.println("1-Add a File");
             System.out.println("2-Delete a File");
             System.out.println("3-Search a File");
             System.out.println("4-Exit a File");
-            aux= sc.nextLine();
+            try{
+                aux= Integer.parseInt(sc.nextLine());
+            }catch (Exception e){
+                System.out.println("Enter a integer");
+            }
             String Fname;
             switch (aux){
-                case "4":
+                case 4:
                     break;
-                case "3":
-                    System.out.println("Search function Selected");
+                case 3:
+                    System.out.println("Enter the file name");
+                    Fname=sc.nextLine();
+                    SearchFiles(Fname);
                     break;
-                case "2":
+                case 2:
                     System.out.println("Enter the file name");
                     Fname=sc.nextLine();
                     DelFile(Fname);
                     break;
-                case "1":
+                case 1:
                     System.out.println("Enter the file name");
                     Fname=sc.nextLine();
                     AddFile(Fname);
@@ -61,5 +69,7 @@ public class fileOperations {
                     System.out.println("Enter a valid value");
             }
         }
+        System.out.println("Main Menu");
     }
+
 }
