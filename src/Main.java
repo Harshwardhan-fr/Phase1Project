@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main extends ListFiles {
+public class Main {
     public static String root_dir="C:\\Users\\hrwrd\\IdeaProjects\\Phase1Project\\dir";
     public static void main(String[] args) {
         File f1= new File(root_dir);
@@ -19,10 +19,12 @@ public class Main extends ListFiles {
                     System.out.println("GoodBye");
                     System.exit(0);
                 case 2:
-                    System.out.println("File Operations Selected");
+                    fileOperations fp= new fileOperations();
+                    fp.fileOps();
                     break;
                 case 1:
-                    Listfiles();
+                    ListFiles l= new ListFiles();
+                    l.Listfiles();
                     break;
                 default:
                     System.out.println("Enter a valid option");
